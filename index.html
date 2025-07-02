@@ -2,390 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>For You 💖</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>For Her</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Raleway:wght@300&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(120deg, #fdfbfb, #ebedee);
-      color: #333;
-      overflow-x: hidden;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255, 182, 193, 0.6);
-      backdrop-filter: blur(10px);
+      padding: 0;
+      height: 100vh;
+      background: radial-gradient(circle at top left, #f6d5f7 0%, #fbe9e7 100%);
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 20px;
-      padding: 15px;
-      z-index: 1000;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    nav a {
-      font-family: 'Pacifico', cursive;
-      font-size: 22px;
-      color: white;
-      text-decoration: none;
-      padding: 10px 16px;
-      border-radius: 20px;
-      transition: all 0.3s;
-    }
-
-    nav a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      transform: scale(1.1);
-    }
-
-    .content {
-      display: none;
-      padding-top: 120px;
-      min-height: 100vh;
-      justify-content: center;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 30px;
-      padding: 60px 40px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 25px;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-      padding: 40px 30px;
-      width: 420px;
-      font-family: 'Dancing Script', cursive;
-      font-size: 26px;
+      font-family: 'Raleway', sans-serif;
       color: #333;
-      animation: fadeIn 1s ease;
-      transform: rotate(calc(var(--rotate, 0deg)));
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .card:hover {
-      transform: scale(1.05) rotate(calc(var(--rotate, 0deg)));
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    .container {
+      text-align: center;
+      padding: 2rem;
+      animation: fadeIn 3s ease-in-out;
     }
 
-    .card h2 {
-      font-family: 'Pacifico', cursive;
-      font-size: 38px;
-      color: #ff69b4;
-      margin-bottom: 20px;
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: #5e2b47;
+      margin-bottom: 1.5rem;
+      text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.3);
+      animation: floatText 4s ease-in-out infinite;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #7a4f6a;
+      margin-top: 1rem;
+      letter-spacing: 0.5px;
     }
 
     @keyframes fadeIn {
-      0% { opacity: 0; transform: scale(0.8); }
-      100% { opacity: 1; transform: scale(1); }
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* Backgrounds */
-    #home { background: linear-gradient(to right, #fff0f5, #ffe4e1); display: flex; flex-wrap: wrap; }
-    #happy { background: linear-gradient(to right, #ffe259, #ffa751); }
-    #sad { background: linear-gradient(to right, #c9d6ff, #e2e2e2); }
-    #mad { background: linear-gradient(to right, #ffdde1, #ee9ca7); }
-    #thank { background: linear-gradient(to right, #e0c3fc, #8ec5fc); }
-
-    @media (max-width: 600px) {
-      .card {
-        width: 90%;
-        font-size: 22px;
-        margin: 10px;
-      }
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
-
-    /* Modal Password */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      text-align: center;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .modal-content input {
-      padding: 10px;
-      font-size: 16px;
-      width: 80%;
-      margin-top: 15px;
-    }
-
-    .modal-content button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #ff69b4;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    .modal-content button:hover {
-      background: #ff85c1;
+    @keyframes floatText {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
     }
   </style>
 </head>
 <body>
-
-<nav>
-  <a href="#" onclick="showTab('home')">Home</a>
-  <a href="#" onclick="openModal('happy')">Happy</a>
-  <a href="#" onclick="openModal('sad')">Sad</a>
-  <a href="#" onclick="openModal('mad')">Mad at me</a>
-  <a href="#" onclick="openModal('thank')">Thank You</a>
-</nav>
-
-<!-- Modal -->
-<div id="passwordModal" class="modal">
-  <div class="modal-content">
-    <h3>Enter Password</h3>
-    <input type="password" id="modalInput" placeholder="Password...">
-    <br>
-    <button onclick="validatePassword()">Enter</button>
+  <div class="container">
+    <h1>Wait a while my sweetie 💖</h1>
+    <p>Something beautiful is coming soon.</p>
   </div>
-</div>
-
-<!-- Sections -->
-<div id="home" class="content" style="display: flex;">
-  <div class="card" style="--rotate: -2deg;">
-    <h2>Hey Beautiful 💕</h2>
-    <p>This space was made with love. For you, and every feeling you carry. You're deeply loved 💌</p>
-  </div>
-  <div class="card" style="--rotate: 3deg;">
-    <h2>Why?</h2>
-    <p>Because you deserve to be reminded: you matter. You're sunshine wrapped in stardust 💫</p>
-  </div>
-</div>
-
-<div id="happy" class="content">
-  <div class="card" style="--rotate: -3deg;">
-    <h2>My Fijju 💫</h2>
-    <p>
-      My sweetest little sunshine, when you smile, the world feels right.  
-      You light up every corner of my soul.  
-      I hope joy always finds you the way my heart found you.  
-      I love you with everything I am. 💛  
-      You’re not just my Fijju, you’re my forever warm place.
-    </p>
-  </div>
-
-  <div class="card" style="--rotate: 2deg;">
-    <h2>My Sweetheart 💖</h2>
-    <p>
-      You, my Sweetheart, are the reason mornings feel magical.  
-      Your giggles are melodies, your voice is comfort, and your love is my home.  
-      When you’re happy, the stars lean in just to see you shine.  
-      I’ll protect your smile like a sacred vow 💞
-    </p>
-  </div>
-
-  <div class="card" style="--rotate: -1.5deg;">
-    <h2>My Sweetie 🌸</h2>
-    <p>
-      You little soft ball of love — yes you, My Sweetie.  
-      Just thinking of you fills my chest with warmth and butterflies.  
-      Your laugh, your quirks, your whole soul — they make life brighter.  
-      Thank you for just existing, lovebug 💕
-    </p>
-  </div>
-
-  <div class="card" style="--rotate: 1deg;">
-    <h2>My Cute Little Girl 🧸</h2>
-    <p>
-      You’re my soft lullaby, my cozy daydream.  
-      My Cute Little Girl, you carry a magic no one else does.  
-      I’d give you the stars if I could, but for now, I’ll just wrap you in love and kisses.  
-      I love you endlessly.
-    </p>
-  </div>
-
-  <div class="card" style="--rotate: -2deg;">
-    <h2>My Cute Little Baby 🍼</h2>
-    <p>
-      My Cute Little Baby, you’re the tenderness my world needed.  
-      The way you pout, laugh, or get sleepy-eyed — it’s a sight I never get tired of.  
-      You’re so precious, I want to hold you forever.  
-      Just stay near, little one 💗
-    </p>
-  </div>
-
-  <div class="card" style="--rotate: 2deg;">
-    <h2>My Cute Little Dumbass 😆</h2>
-    <p>
-      My silly sweetheart — yes you! You adorable little dumbass 🤭  
-      You mess up, trip over your own words, or say the funniest things...  
-      And I still fall harder every time.  
-      You’re chaos, but you’re *my* chaos. Always.
-    </p>
-  </div>
-
-  <div class="card" style="--rotate: -1deg;">
-    <h2>My Good Girl 🌷</h2>
-    <p>
-      My Good Girl, you make me so proud every single day.  
-      The way you care, try your best, and love so deeply — it’s inspiring.  
-      You don’t even know how rare your heart is.  
-      You’re a blessing I’ll never stop cherishing 💐
-    </p>
-  </div>
-</div>
-
-<div id="sad" class="content">
-  <div class="card" style="--rotate: -2deg;">
-    <h2>My Fijju When She's Sad 🥺</h2>
-    <p>
-      My soft little heart, I know some days feel heavy, like the world forgot how to hold you gently.  
-      But I never will. I’m here to carry your sadness in my hands and kiss the tears off your cheeks.  
-      You never have to go through pain alone — not while I’m breathing.
-    </p>
-  </div>
-
-  <div class="card" style="--rotate: 2deg;">
-    <h2>My Sweetheart, It's Okay 🤍</h2>
-    <p>
-      Cry if you need to, love.  
-      I’ll hold you even when your voice cracks and your eyes overflow.  
-      You are still my sunshine, even in the rain.  
-      I’ll never stop loving the softer, hurting parts of you.
-    </p>
-  </div>
-
-  <div class="card" style="--rotate: -1deg;">
-    <h2>My Sweetie, Rest Your Heart 💞</h2>
-    <p>
-      Take your time. The world can wait.  
-      Right now, you need softness. And I’m here — your home, your hug, your calm.  
-      No matter what, your heart is safe with me, always.
-    </p>
-  </div>
-</div>
-
-
-<div id="mad" class="content">
-  <div class="card" style="--rotate: 1deg;">
-    <h2>My Cute Little Dumbass is Mad 😅</h2>
-    <p>
-      Did I mess up again, baby? I’m sorry, I really am.  
-      You mean everything to me, even when you're glaring at me like I broke your candy.  
-      I’ll listen, fix things, and make it right — pinky swear.
-    </p>
-  </div>
-
-  <div class="card" style="--rotate: -2deg;">
-    <h2>My Sweetheart Deserves Better 💔</h2>
-    <p>
-      Your feelings are valid, and I’ll never brush them away.  
-      You are worth patience, understanding, and more love than you can carry.  
-      I’m sorry for every time I didn’t meet that. I’ll keep learning for you.
-    </p>
-  </div>
-
-  <div class="card" style="--rotate: 2deg;">
-    <h2>My Good Girl, I’m Here 🥹</h2>
-    <p>
-      Even if you’re mad, I’ll still call you mine.  
-      I love you fiercely — even in fights.  
-      Let’s grow, talk it out, and come out stronger. Together, like always.
-    </p>
-  </div>
-</div>
-
-
-<div id="thank" class="content">
-  <div class="card" style="--rotate: -2deg;">
-    <h2>My Sweetie, Thank You 🌸</h2>
-    <p>
-      Thank you for your endless patience, your forgiveness, and your love that fills my cracks.  
-      Thank you for being my home in human form.  
-      Every moment with you is a gift I unwrap with awe.
-    </p>
-  </div>
-
-  <div class="card" style="--rotate: 1.5deg;">
-    <h2>My Cute Little Baby 💖</h2>
-    <p>
-      You’ve given me more love than I ever dreamed I could receive.  
-      You’ve taught me what it means to care with your whole soul.  
-      I don’t say it enough: thank you for loving me, even when I didn’t deserve it.
-    </p>
-  </div>
-
-  <div class="card" style="--rotate: 2deg;">
-    <h2>My Fijju, I Cherish You 🌼</h2>
-    <p>
-      You’re not just someone I love — you’re someone I admire.  
-      The way you laugh, the way you care, the way you shine...  
-      I’ll keep saying thank you, forever, because you are my forever.
-    </p>
-  </div>
-</div>
-
-<script>
-  const passwords = {
-    happy: "happy123",
-    sad: "sad123",
-    mad: "mad123",
-    thank: "thanks123"
-  };
-
-  let currentTab = "";
-
-  function openModal(tab) {
-    currentTab = tab;
-    document.getElementById("modalInput").value = "";
-    document.getElementById("passwordModal").style.display = "flex";
-  }
-
-  function validatePassword() {
-    const input = document.getElementById("modalInput").value;
-    if (input === passwords[currentTab]) {
-      document.querySelectorAll(".content").forEach(div => div.style.display = "none");
-      document.getElementById(currentTab).style.display = "flex";
-      document.getElementById("passwordModal").style.display = "none";
-    } else {
-      alert("Incorrect password.");
-    }
-  }
-
-  function showTab(tabName) {
-    document.querySelectorAll(".content").forEach(div => div.style.display = "none");
-    document.getElementById(tabName).style.display = "flex";
-  }
-
-  // Close modal on background click
-  window.onclick = function(event) {
-    const modal = document.getElementById("passwordModal");
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
-  }
-</script>
-
 </body>
 </html>

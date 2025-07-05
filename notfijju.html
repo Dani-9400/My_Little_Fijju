@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Who Do You Think You Are? 😤</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffe0f0, #fff5f9);
+      font-family: "Segoe UI", sans-serif;
+      color: #b30059;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      transition: 0.5s ease;
+    }
+
+    .emoji {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      animation: bounce 1s infinite;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      background: #ff66a3;
+      color: white;
+      padding: 0.7rem 1.6rem;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 6px 16px rgba(255, 105, 180, 0.2);
+    }
+
+    button:hover {
+      background-color: #ff3f86;
+      transform: scale(1.05);
+    }
+
+    #messageBox {
+      display: none;
+      background-color: #fff0f5;
+      padding: 2rem;
+      border-radius: 20px;
+      margin-top: 2rem;
+      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.25);
+      animation: fadeIn 0.6s ease;
+    }
+
+    #messageBox h2 {
+      font-size: 2rem;
+      color: #d1005f;
+      margin-bottom: 1rem;
+    }
+
+    #messageBox p {
+      font-size: 1.2rem;
+      color: #5a3e3e;
+    }
+
+    #loginAgainBtn {
+      margin-top: 30px;
+      background-color: #b30059;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>You really her? </h1>
+  <p>
+    There's no way. You're way too smartwater for her. <br />
+    She's a total dumbass (but like, a <strong>cute</strong> one )<br />
+    And she <strong>is</strong> a sneaky muffin so I can’t be sure. Hmm...
+  </p>
+
+  <div class="btn-group">
+    <button onclick="confess()">Yes, I am her </button>
+    <button onclick="admit()">No, I’m not </button>
+  </div>
+
+  <div id="messageBox">
+    <h2>You're Not Welcome Here</h2>
+    <p>
+      This place isn’t for you.<br />
+      You don’t get to be her. Don’t ever try to impersonate her again.<br />
+      Go away and stay away. This is <strong>her</strong> sacred space.
+      <br />
+      <button id="loginAgainBtn" onclick="goToLogin()">I'm Sorry, I’ll Go Away</button>
+    </p>
+  </div>
+
+  <script>
+   function confess() {
+  window.location.href = "second-chance.html";
+}
+
+
+    function admit() {
+      document.querySelector('.btn-group').style.display = "none";
+      document.querySelector('h1').textContent = "Get Lost.";
+      document.querySelector('p').style.display = "none";
+      document.getElementById("messageBox").style.display = "block";
+    }
+
+    function goToLogin() {
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

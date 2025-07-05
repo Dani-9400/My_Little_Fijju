@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Second Chance 🧐</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #fff0f5, #ffe0f0);
+      font-family: "Segoe UI", sans-serif;
+      color: #b30059;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+
+    input {
+      padding: 0.7rem 1rem;
+      font-size: 1.1rem;
+      border: 2px solid #ff66a3;
+      border-radius: 25px;
+      width: 280px;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    button {
+      background: #ff66a3;
+      color: white;
+      padding: 0.7rem 1.6rem;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 6px 16px rgba(255, 105, 180, 0.2);
+    }
+
+    button:hover {
+      background-color: #ff3f86;
+      transform: scale(1.05);
+    }
+
+    #resultMsg {
+      display: none;
+      font-size: 1.3rem;
+      color: #5a3e3e;
+      margin-top: 2rem;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Still Not Convinced </h1>
+  <p>Tell me, are you really <strong>my good little girl</strong>?<br>
+    If you are, then type those magic words below:</p>
+
+  <input id="goodGirlInput" type="text" placeholder="Type here..." />
+  <br />
+  <button onclick="checkAnswer()">Prove it 💕</button>
+
+  <div id="resultMsg"></div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("goodGirlInput").value.trim().toLowerCase();
+      const resultMsg = document.getElementById("resultMsg");
+
+      if (input === "i'm your good girl" || input === "i am your good girl") {
+        resultMsg.innerHTML = "You actually might be her... <br><strong>I’ll give you another chance...</strong>";
+        resultMsg.style.display = "block";
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 5000);
+      } else {
+        resultMsg.textContent = "Nope... that's not it. Try again";
+        resultMsg.style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

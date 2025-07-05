@@ -1,59 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>For Her</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Raleway:wght@300&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background: radial-gradient(circle at top left, #f6d5f7 0%, #fbe9e7 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Raleway', sans-serif;
-      color: #333;
-    }
-
-    .container {
-      text-align: center;
-      padding: 2rem;
-      animation: fadeIn 3s ease-in-out;
-    }
-
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      color: #5e2b47;
-      margin-bottom: 1.5rem;
-      text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.3);
-      animation: floatText 4s ease-in-out infinite;
-    }
-
-    p {
-      font-size: 1.2rem;
-      color: #7a4f6a;
-      margin-top: 1rem;
-      letter-spacing: 0.5px;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes floatText {
-      0%, 100% { transform: translateY(0); }
-      50%      { transform: translateY(-8px); }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>For My Little Dumbass</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Wait a while my sweetie 💖</h1>
-    <p>Something beautiful is coming soon.</p>
+
+<div id="loginScreen">
+  <div class="login-box">
+    <h2 id="typingNickname">Hi Fizza</h2>
+    <p>Who are you? Are you really my good little girl?</p>
+    
+    <div class="input-wrapper">
+      <input id="userNameInput" type="text" placeholder="Tell me your name..." />
+      <button onclick="login()">Yes, it’s Me 💕</button>
+    </div>
+    
   </div>
+
+  <!-- Floating Hearts -->
+  <div class="hearts">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+  </div>
+</div>
+
+  <header>
+    My Fizza's Sanctuary 💖
+  </header>
+<button class="hamburger" onclick="toggleNav()">☰</button>
+<div class="nav-buttons" id="navMenu">
+  <button onclick="showSection('home')">Home</button>
+  <button onclick="showSection('happy')">Happy</button>
+  <button onclick="showSection('sad')">Sad</button>
+  <button onclick="showSection('mad')">Mad at me</button>
+  <button onclick="showSection('thank')">Thank You</button>
+</div>
+
+  <div class="nav-buttons">
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('happy')">Happy</button>
+    <button onclick="showSection('sad')">Sad</button>
+    <button onclick="showSection('mad')">Mad at me</button>
+    <button onclick="showSection('thank')">Thank You</button>
+  </div>
+
+  <div id="home" class="section">
+    <div class="text-section card-grid">
+      <div class="masonry-card text-card">
+        <h2>Hi Fizza 💖</h2>
+      <p>
+  Welcome home, My Sweetie. This isn’t just a page, it’s a quiet little place built from love, just for you.  
+  Every word here is a reminder: you are seen, you are loved, and you matter. 💕  
+  If the world ever feels too heavy… come here. This is your space, your comfort, your safe haven.  
+  You’ll always have a place here, with me.
+</p>
+
+      </div>
+      <div class="masonry-card text-card">
+       <h2>A Little Diary For You</h2>
+<p>
+  No matter how you're feeling. Happy, sad, upset, or just quiet there’s a note waiting for you here.  
+  Each one is written with care, just for your heart.  
+  It’s our little secret world… always here when you need it. 🤍
+</p>
+
+      </div>
+      <div class="masonry-card text-card">
+      <h2>Always There for You 🥺</h2>
+<p>
+  Whether you're sleepy, pouty, quiet, overwhelmed, or just need a little extra support I’m here.  
+  No matter what the mood, no matter where you are, you’ll always have me.  
+  This space is your safe little corner of the universe. I built it to remind you:  
+  <strong>You’re never alone, My Good Girl 💫</strong>
+</p>
+
+      </div>
+    </div>
+
+    <div class="gallery-title-wrapper">
+      <h2 class="gallery-title">Gallery of my most beautiful girl 💕</h2>
+    </div>
+
+    <div class="masonry-wrapper image-gallery">
+  <div class="masonry-card image-card">
+    <img src="images/1.jpg" draggable="false" alt="Us hugging" />
+    <p class="caption">You are perfect, even with those cute little horns.</p>
+  </div>
+  <div class="masonry-card image-card">
+    <img src="images/3.png" draggable="false" alt="Love note" />
+    <p class="caption">You should really smile more! It looks good on you, Dumbass! </p>
+  </div>
+  <div class="masonry-card image-card">
+    <img src="images/4.png" draggable="false" alt="Love note" />
+    <p class="caption">Bohot cool ho? Zyada cool ho? Shadi pe bhi headphones pehne hue?! </p>
+  </div>
+  <div class="masonry-card image-card">
+    <img src="images/6.png" draggable="false" alt="Love note" />
+    <p class="caption">Wohoo! Fizza turns 20 here! </p>
+  </div>
+  <div class="masonry-card image-card">
+    <img src="images/7.png" draggable="false" alt="Love note" />
+    <p class="caption">Bohot cute ho! <br> Bata raha hoon, is baar pooch nahi raha </p>
+  </div>
+  <div class="masonry-card image-card">
+    <img src="images/8.png" draggable="false" alt="Love note" />
+    <p class="caption">You're beautiful, both soul and body, inside out ✨</p>
+  </div>
+  <div class="masonry-card image-card">
+    <img src="images/9.png" draggable="false" alt="Love note" />
+    <p class="caption">Okayy, my sweet little sneaky muffin </p>
+  </div>
+  <div class="masonry-card image-card">
+    <img src="images/5.png" draggable="false" alt="Love note" />
+    <p class="caption">I'll never forget this day. Thank you for this wonderful memory 🥹</p>
+  </div>
+  <div class="masonry-card image-card">
+    <img src="images/2.png" draggable="false" alt="Her cute smile" />
+    <p class="caption">I've been in many car rides, but this was easily the best one. Thank you, Fizza 💗</p>
+  </div>
+</div>
+
+  </div>
+
+  <div id="happy" class="section">
+  <div id="letter-container">
+    <div class="letter-card">
+      <div class="letter-content">
+        <p class="greeting">Hey My Sweeite, 💖</p>
+        <p class="message">
+          Seeing you happy is the most beautiful thing in the world. Your smile, your laughter, your little yaps, they light up everything. You deserve every single good thing this world has to offer, and even more than that.
+        </p>
+        <p class="message">
+  Talking to you is something I look forward to and it’s not because I expect anything, but because even your presence in a conversation brings calm. You make ordinary moments feel lighter, and somehow, even the quietest chats leave me feeling great.
+</p>
+
+        <p class="message">
+          I know life isn’t always easy, but your strength, your heart, your way of caring, it makes me proud every single day. You deserve to wake up smiling, to feel safe, to be cherished, to be spoiled with love, care and kindness always.
+        </p>
+        <p class="message">
+          Thank you for choosing me, trusting me, and bringing so much love and joy into my life. You’re truly one of a kind — my cute little dumbass, my perfect girl, stay like this forever.
+        </p>
+        <p class="closing">May Allah Always keep you Happy And Smiling, My Cute Little Girl</p>
+        <p class="signature">Daniyal</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="sad" class="section">
+  <div id="letter-container">
+    <div class="letter-card">
+      <div class="letter-content">
+        <p class="greeting">Hey My Strong Little Girl,</p>
+        <p class="message">
+          I know you're feeling down, and if I could, I’d hold you tight right now and not let go until you felt safe again. I wish I could take away every ache in your heart and fill it with warmth instead.
+        </p>
+        <p class="message">
+          Please remember, you're never alone, not for a second. I'm here. I’ll always be here. For your silence, your tears, your anger, your rants, and even your overthinking. You’re allowed to feel everything, and I’ll never judge you for it.
+        </p>
+        <p class="message">
+          You are stronger than you think, softer than you admit, and so deeply cared for. I hate seeing you sad it breaks something inside me. But I promise, no matter what, I’ll be the shoulder you cry on, the arms you fall into, and the voice that reminds you you’re not broken but just human.
+        </p>
+        <p class="message">
+          So cry if you need to. But also remember this " you’re my good girl, my brave little baby, and you mean the absolute world to me. This sadness will pass, but my love and care for you won’t. Ever."
+        </p>
+        <p class="closing">Always here for you,</p>
+        <p class="signature">Daniyal</p>
+
+        <!-- 🎧 Audio Player -->
+        <div class="custom-audio-player">
+          <audio id="fizzaAudio" src="./audio/dont_be_sad.opus"></audio>
+          <button id="audioToggle">▶️ Play</button>
+          <input type="range" id="audioSlider" value="0" min="0" step="1" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div id="mad" class="section">
+  <div id="letter-container">
+    <div class="letter-card">
+      <div class="letter-content">
+        <p class="greeting">Hey My Angy Girl</p>
+        <p class="message">
+          I know you're mad at me right now, and It's probably bad. Maybe I messed up, maybe I said the wrong thing, or maybe I didn’t say enough when I should’ve. Whatever it is I’m sorry, Fizza.
+        </p>
+        <p class="message">
+          But please know this, I still care for you. Whether you’re mad, silent, throwing punches at me, or rolling your eyes so hard they do a full spin, you’re still my girl. My sweetheart. My Fizza.
+        </p>
+        <p class="message">
+          I never want you to feel unheard or uncared for. So if I made you feel that way, I promise I’ll make it right. Because your smile? It’s more important to me than being right. And your peace? That’s everything.
+        </p>
+        <p class="message">
+          So whenever you’re ready… I’m here. With apologies and explanations. So please Give me a Call, My Sweeite. No matter how mad you are, I’m not going anywhere. You’re stuck with me, forever.
+        </p>
+        <p class="closing">Waiting for your Call,</p>
+        <p class="signature">Daniyal</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="thank" class="section">
+  <div id="letter-container">
+    <div class="letter-card">
+      <div class="letter-content">
+ <p class="greeting">My Sweet Fizza, 🤍</p>
+
+<p class="message">
+  Thank you — not just for what you do, but for who you are. For being such an important part of my life. For trusting me, for staying, for being who you are, for being yourself. I only hope I’ve been able to make you Happy, a tiny bit atleast, My Sweetie.
+</p>
+
+<p class="message">
+  I want you to always remember, I’m here for you. Through every high, every low, through your quiet days and chaotic storms. I’m not going anywhere — not today, not ever. And if you ever start to lose yourself or drift too far into your own mess… I’ll pull you back. Even if I have to get stern. Even if I have to pull your ears, scold you, or slap (dher sari baar and back pe hi) some sense into you.
+</p>
+
+<p class="message">
+  But let me be clear — none of that would ever come from anger. Only love. Only care. Because I want what’s best for you, even when your cute little dumbass is too stubborn to see it herself. You’re mine, and I will always fight for you, even if that means sometimes fighting with you, for you.
+</p>
+
+<p class="message">
+  You’ve given me so much — your trust, your time, your support, and a lot of words I never thought I deserved. I’ll never take that for granted. I’ll protect all of it. Even if you push me away, I’ll still pull you close, because you matter to me, Fizza. All of you does.
+</p>
+
+<p class="message">
+  And I know this letter, these words — they’re not enough. Nothing I say could ever fully match how grateful I am for you. But still, from the deepest part of me: thank you for being you. For being my little dumbass. For being mine. Please take this note for what it is — a small piece of how much I cherish you. I’ll keep being thankful for you — today, tomorrow, always.
+</p>
+
+<p class="closing">With all the care and love I carry,</p>
+<p class="signature">Daniyal 🤍</p>
+     </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="welcomePopup">
+  <div class="popup-content">
+    <h2 id="welcomeTitle">Hi My Sweet Fijju 💖</h2>
+    <p>
+      If I’m not there beside you right now, don’t worry, my Sweetie.<br /><br />
+      <strong style="color:#d1005f; font-size: 1.3rem;">
+        This place is yours. Your safe haven, your cozy little corner.
+      </strong><br /><br />
+      When you're sad, come here.<br />
+      When you're happy, come here.<br />
+      When you miss me, come here.<br /><br />
+      I'm in every word, every color, every little thing here, just for you.<br />
+      This place is proof that you are loved and cared for unconditionally.
+    </p>
+    <button onclick="closePopup()">Thank You💕</button>
+  </div>
+</div>
+
+
+  <div id="wrongPasswordPopup" class="custom-popup">
+    <div class="popup-content">
+      <h2>Oopsiee</h2>
+      <p>That wasn’t it. Wanna try again?</p>
+      <button onclick="closeWrongPopup()">Okayy</button>
+    </div>
+  </div>
+
+  <div id="customPrompt" class="custom-popup">
+    <div class="popup-content">
+      <h2 id="promptTitle">🔐</h2>
+      <p id="promptMessage"></p>
+      <input type="password" id="passwordInput" placeholder="Enter the message" />
+      <br />
+      <button onclick="submitCustomPassword()">Let's Go</button>
+      <button onclick="closeCustomPrompt()">Cancel</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <audio id="bgMusic" loop>
+    <source src="audio/bof.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div id="floatingButtons">
+    <button id="musicToggle">🎵 Play Music</button>
+    <button id="shuffleButton">🔀 Shuffle</button>
+    <button id="layoutToggle"> Grid Layout</button>
+  </div>
+
+  <script>
+const nicknames = [
+  "My Sweetheart ",
+  "My Cute Little Baby ",
+  "My Good Girl ",
+  "My Little Dumbass ",
+    "My Sneaky Little Muffin ",
+      "My Sweetie ",
+];
+
+let nicknameIndex = 0;
+function typeNextNickname() {
+  const typingElement = document.getElementById("typingNickname");
+  if (!typingElement) return;
+
+  typingElement.textContent = nicknames[nicknameIndex];
+  nicknameIndex = (nicknameIndex + 1) % nicknames.length;
+  setTimeout(typeNextNickname, 3000);
+}
+typeNextNickname();
+
+// Music toggle logic
+const bgMusic = document.getElementById("bgMusic");
+function toggleMusic() {
+  if (!bgMusic) return;
+  if (bgMusic.paused) {
+    bgMusic.play();
+  } else {
+    bgMusic.pause();
+  }
+}
+</script>
+
+
+<script>
+  const audio = document.getElementById("fizzaAudio");
+  const toggleBtn = document.getElementById("audioToggle");
+  const slider = document.getElementById("audioSlider");
+
+  let isPlaying = false;
+
+  toggleBtn.addEventListener("click", () => {
+    if (isPlaying) {
+      audio.pause();
+      toggleBtn.textContent = "▶️ Play";
+    } else {
+      audio.play();
+      toggleBtn.textContent = "⏸️ Pause";
+    }
+    isPlaying = !isPlaying;
+  });
+
+  // Update slider as audio plays
+  audio.addEventListener("timeupdate", () => {
+    slider.max = audio.duration;
+    slider.value = audio.currentTime;
+  });
+
+  // Allow scrubbing
+  slider.addEventListener("input", () => {
+    audio.currentTime = slider.value;
+  });
+
+  // Reset when audio ends
+  audio.addEventListener("ended", () => {
+    isPlaying = false;
+    toggleBtn.textContent = "▶️ Play";
+  });
+</script>
+<script>
+  // Auto switch to grid layout on mobile devices
+  window.addEventListener("DOMContentLoaded", () => {
+    if (window.innerWidth <= 768) {
+      const wrapper = document.querySelector(".masonry-wrapper.image-gallery");
+      if (wrapper) {
+        wrapper.classList.add("grid-layout");
+      }
+    }
+  });
+</script>
+
+
 </body>
 </html>

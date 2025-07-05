@@ -65,7 +65,7 @@
 
       </div>
       <div class="masonry-card text-card">
-      <h2>Always There for You 🥺</h2>
+      <h2>Always There for You </h2>
 <p>
   Whether you're sleepy, pouty, quiet, overwhelmed, or just need a little extra support I’m here.  
   No matter what the mood, no matter where you are, you’ll always have me.  
@@ -80,7 +80,7 @@
       <h2 class="gallery-title">Gallery of my most beautiful girl 💕</h2>
     </div>
 
-    <div class="masonry-wrapper image-gallery">
+    <div class="masonry-wrapper image-gallery grid-layout">
   <div class="masonry-card image-card">
     <img src="images/1.jpg" draggable="false" alt="Us hugging" />
     <p class="caption">You are perfect, even with those cute little horns.</p>
@@ -286,8 +286,10 @@
 
   <div id="floatingButtons">
     <button id="musicToggle">🎵 Play Music</button>
-    <button id="shuffleButton">🔀 Shuffle</button>
-    <button id="layoutToggle"> Grid Layout</button>
+<button id="shuffleButton" style="display: none;">🔀 Shuffle</button>
+<button id="layoutToggle" style="display: none;">🔲 Grid Layout</button>
+<button id="scatterToggle">✨ Scattered Layout</button>
+
   </div>
 
   <script>
@@ -371,6 +373,29 @@ function toggleMusic() {
   });
 </script>
 
+<script>
+  const layoutToggle = document.getElementById("layoutToggle");
+  const scatterToggle = document.getElementById("scatterToggle");
+  const shuffleButton = document.getElementById("shuffleButton");
+  const galleryWrapper = document.querySelector(".masonry-wrapper.image-gallery");
+
+  function switchToScattered() {
+    galleryWrapper.classList.remove("grid-layout");
+    layoutToggle.style.display = "inline-block";
+    shuffleButton.style.display = "inline-block";
+    scatterToggle.style.display = "none";
+  }
+
+  function switchToGrid() {
+    galleryWrapper.classList.add("grid-layout");
+    layoutToggle.style.display = "none";
+    scatterToggle.style.display = "inline-block";
+    shuffleButton.style.display = "none";
+  }
+
+  layoutToggle.addEventListener("click", switchToGrid);
+  scatterToggle.addEventListener("click", switchToScattered);
+</script>
 
 </body>
 </html>

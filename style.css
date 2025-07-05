@@ -744,28 +744,19 @@ textarea {
     display: flex;
   }
 
-  .hamburger {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    z-index: 1100;
-    color: #d6336c;
-  }
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  position: absolute;
+  top: 15px;
+  right: 15px; /* Align to the right side */
+  z-index: 1100;
+  color: #d6336c;
+}
+}
 
-}
-
-@media screen and (max-width: 768px) {
-  #layoutToggle {
-    display: none;
-  }
-  .hamburger {
-    display: block;
-}
-}
 
 /* Hide hamburger by default (larger screens) */
 .hamburger {
@@ -774,17 +765,19 @@ textarea {
 
 /* Show hamburger only on screens smaller than 768px */
 @media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1000;
-    background: #ffb6c1;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
+.hamburger {
+    display: block; /* Show the hamburger only on small screens */
+  }
+
+  #layoutToggle {
+    display: none;
+  }
+
+  #scatterToggle{
+    display: none;
   }
 }
+@media (max-width: 768px) {
+  #scatterToggle {
+    display: none;  /* Hide the Scattered Layout button on small screens */
+  }}

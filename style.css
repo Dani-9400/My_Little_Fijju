@@ -750,8 +750,8 @@ textarea {
   border: none;
   font-size: 2rem;
   position: absolute;
-  top: 15px;
-  right: 15px; /* Align to the right side */
+  top: 7px;
+  right: 5px; /* Align to the right side */
   z-index: 1100;
   color: #d6336c;
 }

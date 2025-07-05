@@ -745,7 +745,7 @@ textarea {
   }
 
   .hamburger {
-    display: block;
+    display: none;
     background: none;
     border: none;
     font-size: 2rem;
@@ -761,5 +761,30 @@ textarea {
 @media screen and (max-width: 768px) {
   #layoutToggle {
     display: none;
+  }
+  .hamburger {
+    display: block;
+}
+}
+
+/* Hide hamburger by default (larger screens) */
+.hamburger {
+  display: none;
+}
+
+/* Show hamburger only on screens smaller than 768px */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+    background: #ffb6c1;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
   }
 }
